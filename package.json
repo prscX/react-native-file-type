@@ -1,0 +1,23 @@
+{
+  "name": "react-native-file-type",
+  "version": "0.0.0",
+  "description": "React Native Support for sindresorhus/file-type",
+  "author": {
+    "name": "Pranav Raj Singh Chauhan",
+    "email": "pranavchauhan01@gmail.com"
+  },
+  "homepage": "https://github.com/prscX/react-native-file-type",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prscX/react-native-file-type.git"
+  },
+  "dependencies": {
+    "buffer": "5.0.8",
+    "file-type": "7.3.0",
+    "js-base64": "2.3.2",
+    "react-native-fs": "2.8.5"
+  },
+  "devDependencies": {
+    "prettier-pack": "0.0.2"
+  }
+}
