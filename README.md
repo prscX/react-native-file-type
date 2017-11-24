@@ -11,7 +11,7 @@ The file type is detected by checking the
 of the buffer.
 
 [sindresorhus/file-type](https://github.com/sindresorhus/file-type):
-fileType(buffer) API, expects a buffer of binary file data in order to determine
+fileType(buffer) API, accepts a buffer of binary file data in order to determine
 it's meta data. Please find below usage for the same:
 
 ```
