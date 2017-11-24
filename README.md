@@ -1,7 +1,7 @@
 # React Native - File Type
 
-> ReactNative: Detect the file type of a Buffer/Uint8Array by reading from Local
-> Storage
+> ReactNative: Detect the file type of a Buffer/Uint8Array by reading it from
+> device (Android/iOS/Widnows) file system
 
 This library is a React Native wrapper around
 [sindresorhus/file-type](https://github.com/sindresorhus/file-type) node.
@@ -10,9 +10,32 @@ The file type is detected by checking the
 [magic number](<http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files>)
 of the buffer.
 
+sindresorhus/file-type: fileType(buffer) API, expects a buffer of binary file
+data in order to determine it's meta data. Please find below usage for the same:
+
+```
+const readChunk = require('read-chunk');
+const fileType = require('file-type');
+const buffer = readChunk.sync('unicorn.png', 0, 4100);
+
+fileType(buffer);
+//=> {ext: 'png', mime: 'image/png'}
+```
+
+We have created this library for the ease of use. Based on local storage path
+provided we internally use [RNFS](https://github.com/itinance/react-native-fs)
+to read the file and [js-base64](https://github.com/dankogai/js-base64) to
+convert data into Uint8Array buffer which is expected by sindresorhus/file-type:
+fileType(buffer) API
+
+```
+fileType('local-storage-path')
+```
+
 Before we dive into on how to use this library. We would like to thank all the
-contributor of sindresorhus/file-type for providing such a awesome nice, cool
-library
+contributor of
+[sindresorhus/file-type](https://github.com/sindresorhus/file-type) for
+providing such a awesome nice, cool library
 
 ## Install
 
@@ -20,8 +43,8 @@ library
 npm install react-native-file-type
 ```
 
-Internally it uses [RNFS](https://github.com/itinance/react-native-fs) to read
-file from the provided path
+Internally we are using [RNFS](https://github.com/itinance/react-native-fs) to
+read file. We have to link this library with our project:
 
 ```
 react-native link react-native-fs
