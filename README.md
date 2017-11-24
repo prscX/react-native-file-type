@@ -58,11 +58,9 @@ react-native link react-native-fs
 import fileType from 'react-native-file-type'
 
 fileType('local-storage-path').then((type) => {
-
+    //Ext: type.ext
+    //MimeType: type.mime
 })
-
-//Ext: type.ext
-//MimeType: type.mime
 ```
 
 # Contribution
