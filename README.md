@@ -10,6 +10,10 @@ The file type is detected by checking the
 [magic number](<http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files>)
 of the buffer.
 
+Before we dive into on how to use this library. We would like to thank all the
+contributor of sindresorhus/file-type for providing such a awesome nice, cool
+library
+
 ## Install
 
 ```
