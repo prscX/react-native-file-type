@@ -12,6 +12,7 @@
     "url": "https://github.com/prscX/react-native-file-type.git"
   },
   "dependencies": {
+    "awesome-promise": "0.0.1",
     "buffer": "5.0.8",
     "file-type": "7.3.0",
     "js-base64": "2.3.2",

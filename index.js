@@ -3,23 +3,23 @@ import { Base64 } from 'js-base64'
 import fileType from 'file-type'
 
 function FileType(path) {
-  let promise = Promise.Create()
+  return new Promise((resolve, reject) => {
+    RNFS.readFile(path, 'base64')
+      .then(fileData => {
+        let convertedData = CovertBase64ToArrayBuffer(fileData)
+        convertedData = new Uint8Array(convertedData)
 
-  RNFS.readFile(path, 'base64')
-    .then(fileData => {
-      let convertedData = CovertBase64ToUTF8(fileData)
-      let type = fileType(convertedData)
+        let type = fileType(convertedData)
 
-      promise.resolve(type)
-    })
-    .catch(reason => {
-      promise.reject(reason)
-    })
-
-  return promise
+        resolve(type)
+      })
+      .catch(reason => {
+        reject(reason)
+      })
+  })
 }
 
-function CovertBase64ToUTF8(data) {
+function CovertBase64ToArrayBuffer(data) {
   let UTF8Data = Base64.atob(data)
   let UTF8DataLength = UTF8Data.length
 

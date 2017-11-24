@@ -41,7 +41,7 @@ export default class App extends Component<{}> {
       )
         .then(() => {
           FileType(RNFS.DocumentDirectoryPath + '/JPGFile.jpg').then(type => {
-            console.log('Type: ' + type)
+            console.log(`Type: `, type)
           })
         })
         .catch(() => {})
