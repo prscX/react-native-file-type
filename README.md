@@ -4,14 +4,15 @@
 > device (Android/iOS/Widnows) file system
 
 This library is a React Native wrapper around
-[sindresorhus/file-type](https://github.com/sindresorhus/file-type) node.
+[sindresorhus/file-type](https://github.com/sindresorhus/file-type) node module.
 
 The file type is detected by checking the
 [magic number](<http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files>)
 of the buffer.
 
-sindresorhus/file-type: fileType(buffer) API, expects a buffer of binary file
-data in order to determine it's meta data. Please find below usage for the same:
+[sindresorhus/file-type](https://github.com/sindresorhus/file-type):
+fileType(buffer) API, expects a buffer of binary file data in order to determine
+it's meta data. Please find below usage for the same:
 
 ```
 const readChunk = require('read-chunk');
@@ -24,8 +25,9 @@ fileType(buffer);
 
 We have created this library for the ease of use. Based on local storage path
 provided we internally use [RNFS](https://github.com/itinance/react-native-fs)
-to read the file and [js-base64](https://github.com/dankogai/js-base64) to
-convert data into Uint8Array buffer which is expected by sindresorhus/file-type:
+to read file and [js-base64](https://github.com/dankogai/js-base64) to convert
+data into Uint8Array buffer which is expected by
+[sindresorhus/file-type](https://github.com/sindresorhus/file-type):
 fileType(buffer) API
 
 ```
@@ -55,7 +57,9 @@ react-native link react-native-fs
 ```
 import fileType from 'react-native-file-type'
 
-let type = fileType('local-storage-path')
+fileType('local-storage-path').then((type) => {
+
+})
 
 //Ext: type.ext
 //MimeType: type.mime
