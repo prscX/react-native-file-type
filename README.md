@@ -123,6 +123,12 @@ https://raw.githubusercontent.com/harjot-oberai/MaterialShadows/master/screens/c
 https://github.com/prscX/react-native-gradient-blur-view/raw/master/assets/hero.png
 )
 
+- React Native About Libraries: [react-native-about-libraries](https://github.com/prscX/react-native-about-libraries)
+
+![](
+https://github.com/prscX/react-native-about-libraries/raw/master/hero.png
+)
+
 - Visual Code Essential Plugins: [vs-essential-plugins](https://github.com/prscX/vs-essential-plugins)
 
 ![Screenshots](https://pbs.twimg.com/profile_images/922911523328081920/jEKFRPKV_400x400.jpg)
@@ -130,4 +136,5 @@ https://github.com/prscX/react-native-gradient-blur-view/raw/master/assets/hero.
 - Prettier Pack: [prettier-pack](https://github.com/prscX/prettier-pack)
 
 ![Screenshots](https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-banner-light.png)
+
 
