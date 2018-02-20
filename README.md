@@ -1,5 +1,12 @@
 # React Native - File Type
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/react-native-file-type"><img src="http://img.shields.io/npm/v/react-native-file-type.svg?style=flat" /></a>
+  <a href="https://github.com/prscX/react-native-file-type/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" /></a>
+  <a href="https://github.com/prscX/react-native-file-type#License"><img src="https://img.shields.io/npm/l/react-native-file-type.svg?style=flat" /></a>
+</p>
+
+
 > ReactNative: Detect the file type of a Buffer/Uint8Array by reading it from
 > device (Android/iOS/Widnows) file system
 
