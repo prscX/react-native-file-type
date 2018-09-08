@@ -14,7 +14,7 @@ function FileType(path) {
           let decodedData = String.fromCharCode.apply(null, convertedData);
 
           if (
-            decodedData.startsWith("<html>") &&
+            decodedData.startsWith("<html>") ||
             decodedData.endsWith("</html>")
           ) {
             type = { ext: "html", mime: "text/html" };
