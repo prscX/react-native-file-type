@@ -2,26 +2,34 @@ import RNFS from "react-native-fs";
 import { Base64 } from "js-base64";
 import fileType from "file-type";
 
+function min (a, b) {
+  return a < b ? a : b;
+}
+
 function FileType(path) {
   return new Promise((resolve, reject) => {
-    RNFS.readFile(path, "base64")
-      .then(fileData => {
-        let convertedData = CovertBase64ToArrayBuffer(fileData);
-        convertedData = new Uint8Array(convertedData);
+    RNFS.stat(path)
+      .then(statResult => {
+        const numberBytes = min(statResult.size, 64);
+        RNFS.read(path, numberBytes, 0, "base64")
+          .then(fileData => {
+            let convertedData = CovertBase64ToArrayBuffer(fileData);
+            convertedData = new Uint8Array(convertedData);
 
-        let type = fileType(convertedData);
-        if (type === undefined || type === null) {
-          let decodedData = String.fromCharCode.apply(null, convertedData);
+            let type = fileType(convertedData);
+            if (type === undefined || type === null) {
+              let decodedData = String.fromCharCode.apply(null, convertedData);
 
-          if (
-            decodedData.startsWith("<html>") ||
-            decodedData.endsWith("</html>")
-          ) {
-            type = { ext: "html", mime: "text/html" };
-          }
-        }
+              if (
+                decodedData.startsWith("<html>") ||
+                decodedData.endsWith("</html>")
+              ) {
+                type = { ext: "html", mime: "text/html" };
+              }
+            }
 
-        resolve(type);
+            resolve(type);
+          })
       })
       .catch(reason => {
         reject(reason);
