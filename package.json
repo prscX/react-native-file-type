@@ -15,7 +15,7 @@
     "buffer": "5.0.8",
     "file-type": "7.3.0",
     "js-base64": "2.3.2",
-    "react-native-fs": "2.11.15"
+    "react-native-fs": "^2.11.15"
   },
   "devDependencies": {
     "prettier-pack": "0.0.7"
