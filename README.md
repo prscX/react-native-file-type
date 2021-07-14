@@ -60,11 +60,7 @@ npm install react-native-file-type
 ```
 
 Internally we are using [RNFS](https://github.com/itinance/react-native-fs) to
-read file. We have to link this library with our project:
-
-```
-react-native link react-native-fs
-```
+read file. You need to add this library to your project, please follow installation steps [RNFS](https://github.com/itinance/react-native-fs/)
 
 ## 💻 Usage
 
